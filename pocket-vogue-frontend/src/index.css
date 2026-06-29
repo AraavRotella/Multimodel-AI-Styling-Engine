@@ -1,0 +1,10 @@
+/* Base reset - design system styles are in design.css */
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
