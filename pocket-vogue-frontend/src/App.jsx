@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./design.css";
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://multimodel-ai-styling-engine-production.up.railway.app";
 
 function cleanLabel(str, prefix = "", suffix = "") {
   let s = str || "";
@@ -145,9 +145,9 @@ export default function App() {
   // Get 5 items centered on currentIdx
   const carouselSlots = items.length
     ? [-2, -1, 0, 1, 2].map((offset) => ({
-        offset,
-        item: items[((currentIdx + offset) % items.length + items.length) % items.length],
-      }))
+      offset,
+      item: items[((currentIdx + offset) % items.length + items.length) % items.length],
+    }))
     : [];
 
   // Drag / swipe handlers
@@ -401,9 +401,8 @@ export default function App() {
 
             {uploadStatus && (
               <p
-                className={`upload-status ${
-                  uploadStatus.includes("failed") ? "error" : "success"
-                }`}
+                className={`upload-status ${uploadStatus.includes("failed") ? "error" : "success"
+                  }`}
               >
                 {uploadStatus}
               </p>
